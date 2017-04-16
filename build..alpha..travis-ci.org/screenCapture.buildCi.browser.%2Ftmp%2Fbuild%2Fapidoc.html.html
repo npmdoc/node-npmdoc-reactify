@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/andreypopp/reactify"
-
-    >reactify (v1.1.1)</a>
+    <a href="https://github.com/andreypopp/reactify">reactify (v1.1.1)</a>
 </h1>
 <h4>Browserify transform for JSX (a superset of JS used by React.js)</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.reactify">module reactify</a><ol>
 
@@ -112,18 +105,18 @@
     if (isJSXFile(filename, options)) {
       try {
         var output = ReactTools.transform(source, {
-          es5: options.target === &#x27;es5&#x27;,
+          es5: options.target === 'es5',
           sourceMap: true,
           sourceFilename: filename,
-          stripTypes: options[&#x27;strip-types&#x27;] || options.stripTypes,
+          stripTypes: options['strip-types'] || options.stripTypes,
           harmony: options.harmony || options.es6
         });
         this.queue(output);
       } catch (error) {
-        error.name = &#x27;ReactifyError&#x27;;
-        error.message = filename + &#x27;: &#x27; + error.message;
+        error.name = 'ReactifyError';
+        error.message = filename + ': ' + error.message;
         error.fileName = filename;
-        this.emit(&#x27;error&#x27;, error);
+        this.emit('error', error);
       }
     } else {
       this.queue(source);
@@ -162,7 +155,7 @@ function compile() {
   if (isJSXFile(filename, options)) {
     try {
       var output = ReactTools.transform(source, {
-        es5: options.target === &#x27;es5&#x27;,
+        es5: options.target === 'es5',
         sourceMap: true,
         sourceFilename: filename,
 ...</pre></li>
@@ -177,3 +170,4 @@ function compile() {
     ]
 </div>
 </div>
+</body></html>

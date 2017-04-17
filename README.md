@@ -3,6 +3,8 @@
 
 [![NPM](https://nodei.co/npm/reactify.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/reactify)
 
+- [https://npmdoc.github.io/node-npmdoc-reactify/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-reactify/build/apidoc.html)
+
 [![apidoc](https://npmdoc.github.io/node-npmdoc-reactify/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-reactify/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-reactify/build/screenCapture.npmPackageListing.svg)
@@ -72,95 +74,6 @@
     "scripts": {},
     "version": "1.1.1"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module reactify](#apidoc.module.reactify)
-1.  [function <span class="apidocSignatureSpan"></span>reactify (filename, options)](#apidoc.element.reactify.reactify)
-1.  [function <span class="apidocSignatureSpan">reactify.</span>toString ()](#apidoc.element.reactify.toString)
-
-
-
-# <a name="apidoc.module.reactify"></a>[module reactify](#apidoc.module.reactify)
-
-#### <a name="apidoc.element.reactify.reactify"></a>[function <span class="apidocSignatureSpan"></span>reactify (filename, options)](#apidoc.element.reactify.reactify)
-- description and source-code
-```javascript
-function reactify(filename, options) {
-  options = options || {};
-
-  var buf = [];
-
-  function write(chunk) {
-    if (!Buffer.isBuffer(chunk)) {
-      chunk = new Buffer(chunk)
-    }
-    return buf.push(chunk)
-  }
-
-  function compile() {
-    var source = Buffer.concat(buf).toString();
-    // jshint -W040
-    if (isJSXFile(filename, options)) {
-      try {
-        var output = ReactTools.transform(source, {
-          es5: options.target === 'es5',
-          sourceMap: true,
-          sourceFilename: filename,
-          stripTypes: options['strip-types'] || options.stripTypes,
-          harmony: options.harmony || options.es6
-        });
-        this.queue(output);
-      } catch (error) {
-        error.name = 'ReactifyError';
-        error.message = filename + ': ' + error.message;
-        error.fileName = filename;
-        this.emit('error', error);
-      }
-    } else {
-      this.queue(source);
-    }
-    return this.queue(null);
-    // jshint +W040
-  }
-
-  return through(write, compile);
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.reactify.toString"></a>[function <span class="apidocSignatureSpan">reactify.</span>toString ()](#apidoc.element.reactify.toString)
-- description and source-code
-```javascript
-toString = function () {
-    return toString;
-}
-```
-- example usage
-```shell
-...
-  if (!Buffer.isBuffer(chunk)) {
-    chunk = new Buffer(chunk)
-  }
-  return buf.push(chunk)
-}
-
-function compile() {
-  var source = Buffer.concat(buf).toString();
-  // jshint -W040
-  if (isJSXFile(filename, options)) {
-    try {
-      var output = ReactTools.transform(source, {
-        es5: options.target === 'es5',
-        sourceMap: true,
-        sourceFilename: filename,
-...
 ```
 
 

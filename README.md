@@ -1,4 +1,7 @@
-# api documentation for  [reactify (v1.1.1)](https://github.com/andreypopp/reactify)  [![npm package](https://img.shields.io/npm/v/npmdoc-reactify.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-reactify) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-reactify.svg)](https://travis-ci.org/npmdoc/node-npmdoc-reactify)
+# npmdoc-reactify
+
+#### basic api documentation for  [reactify (v1.1.1)](https://github.com/andreypopp/reactify)  [![npm package](https://img.shields.io/npm/v/npmdoc-reactify.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-reactify) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-reactify.svg)](https://travis-ci.org/npmdoc/node-npmdoc-reactify)
+
 #### Browserify transform for JSX (a superset of JS used by React.js)
 
 [![NPM](https://nodei.co/npm/reactify.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/reactify)
@@ -72,7 +75,8 @@
         "url": "git://github.com/andreypopp/reactify.git"
     },
     "scripts": {},
-    "version": "1.1.1"
+    "version": "1.1.1",
+    "bin": {}
 }
 ```
 
